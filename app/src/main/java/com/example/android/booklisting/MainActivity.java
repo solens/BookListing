@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 
 
 public class MainActivity extends AppCompatActivity {
-    String query = "Gorilla";
+    String query = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
             if (checkQuery()) {
                 BookListingAsyncTask asyncTask = new BookListingAsyncTask();
                 asyncTask.execute();
-                updateDialog("");
+                updateDialog(getResources().getString(R.string.searching));
             }
-        } else {updateDialog("No internet connection.");}
+        } else {updateDialog(getResources().getString(R.string.no_connection));}
     }
 
     public Boolean checkQuery(){
@@ -90,8 +90,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(ArrayList<Book> books) {
             super.onPostExecute(books);
-            if(books.isEmpty()){updateDialog("No results found.");}
-            else{updateUI(books);}
+            if(books.isEmpty()){updateDialog(getResources().getString(R.string.no_results));}
+            else{
+                updateUI(books);
+                updateDialog("");
+            }
         }
     }
 }

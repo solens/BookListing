@@ -2,8 +2,6 @@ package com.example.android.booklisting;
 
 import java.util.List;
 
-import static android.R.attr.description;
-
 /**
  * Created by Solen on 6/19/2017.
  */

@@ -2,4 +2,9 @@
     <string name="app_name">Book Listing</string>
     <string name="empty_query">Please enter at least one keyword.</string>
     <string name="query_has_punct">Please separate your keywords with single spaces. Your search may only contain letters, numbers and single spaces.</string>
+    <string name="no_results">No results found.</string>
+    <string name="no_connection">No internet connection.</string>
+    <string name="searching">Searching...</string>
+    <string name="search_key_words">Search key words:</string>
+    <string name="search">Search</string>
 </resources>
