@@ -7,4 +7,5 @@
     <string name="searching">Searching...</string>
     <string name="search_key_words">Search key words:</string>
     <string name="search">Search</string>
+    <string name="suggestion">Enter a few keywords separated with a single space. Use only alphanumeric characters.</string>
 </resources>

@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        updateDialog(getString(R.string.suggestion));
+
     }
 
     public void launchSearch(){
@@ -90,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(ArrayList<Book> books) {
             super.onPostExecute(books);
-            if(books.isEmpty()){updateDialog(getResources().getString(R.string.no_results));}
+            if(books.isEmpty()){updateDialog(getResources().getString(R.string.no_results) + " " + getResources().getString(R.string.suggestion));}
             else{
                 updateUI(books);
                 updateDialog("");

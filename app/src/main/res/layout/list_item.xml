@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/title"
-            android:text="Title"
+            android:text=""
             android:ellipsize="end"
             android:maxLines="1"
             />
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/author"
-            android:text="Authors"
+            android:text=""
             android:ellipsize="end"
             android:maxLines="1"
             />

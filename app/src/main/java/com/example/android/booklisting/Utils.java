@@ -24,6 +24,8 @@ import java.util.ArrayList;
 public class Utils {
 
     public static final String LOG_TAG = Utils.class.getSimpleName();
+    public static final String TITLE = "title";
+    public static final String AUTHORS = "authors";
 
     public static ArrayList fetchListingData(String requestUrl) {
         // Create URL object
@@ -126,11 +128,11 @@ public class Utils {
                     String title;
                     String authors;
                     //Get Title
-                    if(properties.has("title")){title = properties.getString("title");}
+                    if(properties.has(TITLE)){title = properties.getString(TITLE);}
                     else{title = "No Title";}
                     //Get Author List in a String[] format
-                    if(properties.has("authors")) {
-                        JSONArray authorsList = properties.getJSONArray("authors");
+                    if(properties.has(AUTHORS)) {
+                        JSONArray authorsList = properties.getJSONArray(AUTHORS);
                         authors = authorsList.toString();
                     } else{authors = "No Authors";}
 
@@ -140,7 +142,7 @@ public class Utils {
             }
         }
         catch (JSONException e) {
-            Log.e(LOG_TAG, "Problem parsing the earthquake JSON results", e);
+            Log.e(LOG_TAG, "Problem parsing the JSON results", e);
         }
         return null;
     }
