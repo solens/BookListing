@@ -75,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
         BookAdapter adapter = new BookAdapter(this,books);
         ListView listView = (ListView) findViewById(R.id.results_list);
         listView.setAdapter(adapter);
+        if(books.isEmpty()){
+            adapter.clear();
+            return;
+        }
     }
 
     public String MakeUrlString(String q){
@@ -92,7 +96,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(ArrayList<Book> books) {
             super.onPostExecute(books);
-            if(books.isEmpty()){updateDialog(getResources().getString(R.string.no_results) + " " + getResources().getString(R.string.suggestion));}
+            if(books.isEmpty()){
+                updateDialog(getResources().getString(R.string.no_results) + " " + getResources().getString(R.string.suggestion));
+                updateUI(books);
+            }
             else{
                 updateUI(books);
                 updateDialog("");
